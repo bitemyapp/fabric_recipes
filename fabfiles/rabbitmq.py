@@ -2,7 +2,7 @@ from fabric.api import *
 from cuisine import dir_ensure, file_exists, file_link, mode_sudo, \
      package_ensure_apt, user_ensure
 
-def provision_bunny(admin_password):
+def provision_rabbitmq(admin_password):
     append("/etc/apt/sources.list.d/rabbitmq.list",
            "deb http://www.rabbitmq.com/debian/ testing main", use_sudo=True)
     if not file_exists("/usr/sbin/rabbitmq-server"):
