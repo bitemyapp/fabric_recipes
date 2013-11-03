@@ -8,4 +8,6 @@ fabric cuisine cuisine_sweet cuisine-postgresql jinja2
 
 ## Provided Recipes
 
-RabbitMQ
+* RabbitMQ
+* PostgreSQL
+* Clojure
