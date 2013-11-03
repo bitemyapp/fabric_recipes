@@ -1,0 +1,14 @@
+description "{{app_name}}"
+author "Chris Allen"
+
+start on runlevel [345]
+setuid {{app_name}}
+
+script
+    . /srv/{{app_name}}/env.sh
+    cd /srv/{{app_name}}
+    chown -R {{app_name}}.{{app_name}} /srv/{{app_name}}
+    set -x
+    java {{jvm_args}} -server -jar /srv/{{app_name}}/{{app_name}}.jar >> /srv/log/{{app_name}}/{{app_name}}.log 2>&1
+    emit {{app_name}}_running
+end script
