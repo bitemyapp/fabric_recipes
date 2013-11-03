@@ -1,6 +1,8 @@
 from fabric.api import *
 from cuisine import dir_ensure, file_exists, file_link, mode_sudo, \
      package_ensure_apt, user_ensure
+from cuisine_postgresql import (postgresql_role_ensure,
+                                postgresql_database_ensure)
 
 def provision_postgresql():
     package_ensure_apt("postgresql")
